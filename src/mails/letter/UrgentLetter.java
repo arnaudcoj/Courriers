@@ -3,7 +3,10 @@
  * @author Pierre Graux
  * @author Arnaud Cojez
  */
-package mails;
+package mails.letter;
+
+import mails.Inhabitant;
+import mails.Letter;
 
 /**
  * Class defining the UrgentLetter
@@ -16,7 +19,6 @@ public class UrgentLetter extends LetterDecorator{
 	 * Constructor for the UrgentLetter class
 	 * @param sender
 	 * @param receiver
-	 * @param content
 	 * @param letter
 	 * @throws IllegalArgumentException if letter is an UrgentLetter
 	 */

@@ -3,7 +3,11 @@
  * @author Pierre Graux
  * @author Arnaud Cojez
  */
-package mails;
+package mails.letter;
+
+import mails.Inhabitant;
+import mails.Letter;
+import mails.content.Text;
 
 /**
  * Class defining the SimpleLetter

@@ -3,18 +3,21 @@
  * @author Pierre Graux
  * @author Arnaud Cojez
  */
-package mails;
+package mails.letter;
+
+import mails.Inhabitant;
+import mails.content.Text;
 
 /**
- * Class defining the acknowledgmentOfReceipt
+ * Class defining the Acknowledgment Of Receipt
  */
 public class AcknowledgmentOfReceipt extends SimpleLetter {
 
 	/**
-	 * Constructor for the acknowledgmentOfReceipt class
+	 * Constructor for the AcknowledgmentOfReceipt class
+	 * 
 	 * @param sender
 	 * @param receiver
-	 * @param content
 	 */
 	public AcknowledgmentOfReceipt(Inhabitant sender, Inhabitant receiver) {
 		super(sender, receiver, new Text("Your letter have been received."));

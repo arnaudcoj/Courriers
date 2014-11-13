@@ -3,7 +3,10 @@
  * @author Pierre Graux
  * @author Arnaud Cojez
  */
-package mails;
+package mails.letter;
+
+import mails.Inhabitant;
+import mails.Letter;
 
 /**
  * Class defining the RegiteredLetter

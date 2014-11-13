@@ -3,7 +3,9 @@
  * @author Pierre Graux
  * @author Arnaud Cojez
  */
-package mails;
+package mails.content;
+
+import mails.Content;
 
 /**
  * Class defining the Money
