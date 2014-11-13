@@ -8,7 +8,7 @@ package mails;
 /**
  * Abstract Class defining the Letters
  */
-public abstract class Letter<T extends Content> {
+public abstract class Letter<T extends Content> implements Content {
 
 	//Attributes
 	protected Inhabitant sender;

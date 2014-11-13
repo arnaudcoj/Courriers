@@ -34,6 +34,7 @@ public class City {
 	 */
 	public void sendLetter(Letter<?> letter) {
 		this.postBox.add(letter);
+		letter.getSender().getBankAccount().debit(letter.getCost());
 	}
 	
 	public void distributeLetters()
