@@ -16,6 +16,7 @@ public class Money implements Content {
 	/**
 	 * Constructor for the Money class
 	 * @param amount
+	 * @throws {@link IllegalArgumentException} amount must be >= 0
 	 */
 	public Money(int amount) throws IllegalArgumentException {
 		if(amount < 0)
