@@ -22,7 +22,7 @@ public class UrgentLetter extends LetterDecorator{
 	 */
 	public UrgentLetter(Inhabitant sender, Inhabitant receiver,
 			Letter<?> content, Letter<?> letter) throws IllegalArgumentException {
-		super(sender, receiver, content, letter);
+		super(sender, receiver, letter);
 		if(letter instanceof UrgentLetter)
 			throw new IllegalArgumentException("letter is an UrgentLetter");
 	}
@@ -32,7 +32,7 @@ public class UrgentLetter extends LetterDecorator{
 	 */
 	@Override
 	public void action() {
-		this.letter.action();
+		this.content.action();
 	}
 
 	/* (non-Javadoc)
@@ -40,7 +40,7 @@ public class UrgentLetter extends LetterDecorator{
 	 */
 	@Override
 	public int getCost() {
-		return this.letter.getCost()*UrgentLetter.COSTFACTOR ;
+		return this.content.getCost()*UrgentLetter.COSTFACTOR ;
 	}
 
 }

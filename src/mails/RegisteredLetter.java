@@ -21,7 +21,7 @@ public class RegisteredLetter extends LetterDecorator {
 	 */
 	public RegisteredLetter(Inhabitant sender, Inhabitant receiver,
 			Letter<?> content, Letter<?> letter) {
-		super(sender, receiver, content, letter);
+		super(sender, receiver, letter);
 	}
 
 	/* (non-Javadoc)
@@ -29,7 +29,7 @@ public class RegisteredLetter extends LetterDecorator {
 	 */
 	@Override
 	public void action() {
-		this.letter.action();
+		this.content.action();
 		this.sender.getCity().sendLetter(new AcknowledgmentOfReceipt(this.receiver, this.sender));
 	}
 
@@ -38,7 +38,7 @@ public class RegisteredLetter extends LetterDecorator {
 	 */
 	@Override
 	public int getCost() {
-		return this.letter.getCost() + RegisteredLetter.OVERCOST;
+		return this.content.getCost() + RegisteredLetter.OVERCOST;
 	}
 
 }
