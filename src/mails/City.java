@@ -28,7 +28,18 @@ public class City {
 		this.postBox = new LinkedList<Letter<?>>();
 	}
 	
+	/**
+	 * Adds a letter in the postBox
+	 * @param letter the letter to add 
+	 */
 	public void sendLetter(Letter<?> letter) {
-		//TODO
+		this.postBox.add(letter);
+	}
+	
+	public void distributeLetters()
+	{
+		for (Letter<?> letter : this.postBox) {
+			letter.getReceiver().receiveLetter(letter);
+		}
 	}
 }
