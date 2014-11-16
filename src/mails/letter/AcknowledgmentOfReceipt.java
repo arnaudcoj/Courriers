@@ -15,7 +15,7 @@ public class AcknowledgmentOfReceipt extends SimpleLetter {
 
 	/**
 	 * Constructor for the AcknowledgmentOfReceipt class
-	 * 
+	 * Is sent automatically when an inhabitant receives a RegisteredLetter
 	 * @param sender
 	 * @param receiver
 	 */

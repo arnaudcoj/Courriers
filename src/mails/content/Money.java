@@ -27,8 +27,8 @@ public class Money implements Content {
 	}
 	
 	/**
-	 * returns the amount
-	 * @return the amount
+	 * returns the amount of money
+	 * @return the amount of money
 	 */
 	public int getAmount() {
 		return amount;

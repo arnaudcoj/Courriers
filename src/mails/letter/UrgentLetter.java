@@ -9,7 +9,7 @@ import mails.Inhabitant;
 import mails.Letter;
 
 /**
- * Class defining the UrgentLetter
+ * Class defining the Urgent Letter
  */
 public class UrgentLetter extends LetterDecorator{
 

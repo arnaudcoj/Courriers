@@ -44,6 +44,7 @@ public class Inhabitant {
 	}
 
 	/**
+	 * Receive the letter (execute the method action() of the letter)
 	 * @param letter
 	 */
 	public void receiveLetter(Letter<?> letter) {

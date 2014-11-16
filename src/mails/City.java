@@ -41,8 +41,10 @@ public class City {
 		letter.getSender().getBankAccount().debit(letter.getCost());
 	}
 
+	/**
+	 * Distributes the letters of the postBox to the receivers
+	 */
 	public void distributeLetters() {
-
 		while(!this.postBox.isEmpty()) {
 			Letter<?> l = this.postBox.pop();
 			l.getReceiver().receiveLetter(l);
