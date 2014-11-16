@@ -44,8 +44,14 @@ public class City {
 	 * Distributes the letters of the postBox to the receivers
 	 */
 	public void distributeLetters() {
+		LinkedList<Letter<?>> sac = new LinkedList<Letter<?>>();
 		while(!this.postBox.isEmpty()) {
-			Letter<?> l = this.postBox.pop();
+			sac.add(this.postBox.pop());
+		}
+
+		this.postBox.clear();
+		while(!sac.isEmpty()) {
+			Letter<?> l = sac.pop();
 			l.getReceiver().receiveLetter(l);
 		}
 	}

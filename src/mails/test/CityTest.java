@@ -6,7 +6,6 @@
 package mails.test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 import mails.BankAccount;
 import mails.City;
 import mails.Inhabitant;
