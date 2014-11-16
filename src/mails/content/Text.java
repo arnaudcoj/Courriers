@@ -34,4 +34,12 @@ public class Text implements Content {
 		return text;
 	}
 
+	@Override
+	/**
+	 * Returns a String defining the Text
+	 * @return a String defining the Text
+	 */
+	public String toString() {
+		return "text content (" + this.text + ")";
+	}
 }

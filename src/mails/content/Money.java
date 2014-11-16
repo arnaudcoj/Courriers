@@ -33,4 +33,13 @@ public class Money implements Content {
 	public int getAmount() {
 		return amount;
 	}
+
+	@Override
+	/**
+	 * Returns a String defining the Content
+	 * @return a String defining the Content
+	 */
+	public String toString() {
+		return "money content (" + this.amount + ")";
+	}
 }

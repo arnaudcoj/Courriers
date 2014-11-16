@@ -10,4 +10,10 @@ package mails;
  */
 public interface Content {
 
+	@Override
+	/**
+	 * Returns a String defining the Content
+	 * @return a String defining the Content
+	 */
+	public abstract String toString();
 }
