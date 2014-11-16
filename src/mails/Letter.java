@@ -64,4 +64,9 @@ public abstract class Letter<T extends Content> implements Content {
 	 */
 	public abstract int getCost();
 
+	/**
+	 * Returns a String defining the letter
+	 * @return a String defining the letter
+	 */
+	public abstract String toString();
 }
