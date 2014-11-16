@@ -11,6 +11,7 @@ package mails;
 public class Inhabitant {
 
 	//Attributes
+	protected String name;
 	protected City city;
 	protected BankAccount bankAccount; 
 	
@@ -21,9 +22,10 @@ public class Inhabitant {
 	 * @param city
 	 * @param bankAccount
 	 */
-	public Inhabitant(City city, BankAccount bankAccount) {
+	public Inhabitant(City city, String name, BankAccount bankAccount) {
 		super();
 		this.city = city;
+		this.name = name;
 		this.bankAccount = bankAccount;
 	}
 
@@ -48,7 +50,19 @@ public class Inhabitant {
 	 * @param letter
 	 */
 	public void receiveLetter(Letter<?> letter) {
+		System.out.println("<- " + this.name + " receives an " + letter);
 		letter.action();		
 	}
 
+	/**
+	 * Sends a letter (execute the method action() of the letter)
+	 * @param letter
+	 */
+	public void sendLetter(Letter<?> letter) {
+		System.out.println("-> " + this.name + " mails an " + letter);
+		this.city.sendLetter(letter);		
+	}
+
+	
+	
 }
