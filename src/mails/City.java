@@ -15,32 +15,37 @@ public class City {
 
 	// Attributes
 	protected String name;
-	protected List<Letter<?>> postBox;
-	
-	//Methods
-	
+	protected LinkedList<Letter<?>> postBox;
+
+	// Methods
+
 	/**
 	 * Constructor for the City class
-	 * @param name name of the City
+	 * 
+	 * @param name
+	 *            name of the City
 	 */
 	public City(String name) {
 		this.name = name;
 		this.postBox = new LinkedList<Letter<?>>();
 	}
-	
+
 	/**
 	 * Adds a letter in the postBox
-	 * @param letter the letter to add 
+	 * 
+	 * @param letter
+	 *            the letter to add
 	 */
 	public void sendLetter(Letter<?> letter) {
 		this.postBox.add(letter);
 		letter.getSender().getBankAccount().debit(letter.getCost());
 	}
-	
-	public void distributeLetters()
-	{
-		for (Letter<?> letter : this.postBox) {
-			letter.getReceiver().receiveLetter(letter);
+
+	public void distributeLetters() {
+
+		while(!this.postBox.isEmpty()) {
+			Letter<?> l = this.postBox.pop();
+			l.getReceiver().receiveLetter(l);
 		}
 	}
 }
