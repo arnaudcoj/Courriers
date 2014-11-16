@@ -13,6 +13,16 @@ public class BankAccount {
 	//Fields
 	protected int balance;
 
+	//Methods
+	/**
+	 * Constructor for the BankAccount class
+	 * @param balance
+	 */
+	public BankAccount(int balance) {
+		super();
+		this.balance = balance;
+	}
+
 	/**
 	 * credit the bank account
 	 * @param cash amount of money to credit to the bank account
