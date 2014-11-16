@@ -9,17 +9,17 @@ import mails.Inhabitant;
 import mails.content.Text;
 
 /**
- * Class defining the Acknowledgment Of Receipt
+ * Class defining the ThanksLetter
  */
-public class AcknowledgmentOfReceipt extends SimpleLetter {
+public class ThanksLetter extends SimpleLetter {
 
 	/**
-	 * Constructor for the AcknowledgmentOfReceipt class
-	 * Is sent automatically when an inhabitant receives a RegisteredLetter
+	 * Constructor for the ThanksLetter class
 	 * @param sender
 	 * @param receiver
+	 * @param letter
 	 */
-	public AcknowledgmentOfReceipt(Inhabitant sender, Inhabitant receiver, Text content) {
+	public ThanksLetter(Inhabitant sender, Inhabitant receiver, Text content) {
 		super(sender, receiver, content);
 	}
 
@@ -35,7 +35,7 @@ public class AcknowledgmentOfReceipt extends SimpleLetter {
 	 */
 	@Override
 	public String toString() {
-		return "an aknowledgment of receipt which is " + super.toString();
+		return "a thanks letter which is " + super.toString(); 
 	}
 
 }

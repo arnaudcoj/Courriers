@@ -45,4 +45,12 @@ public class UrgentLetter extends LetterDecorator{
 		return this.content.getCost()*UrgentLetter.COSTFACTOR ;
 	}
 
+	/* (non-Javadoc)
+	 * @see mails.Letter#toString()
+	 */
+	@Override
+	public String toString() {
+		return "an urgent letter whose content is " + this.content;
+	}
+
 }

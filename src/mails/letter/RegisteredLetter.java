@@ -7,6 +7,7 @@ package mails.letter;
 
 import mails.Inhabitant;
 import mails.Letter;
+import mails.content.Text;
 
 /**
  * Class defining the RegiteredLetter
@@ -33,7 +34,9 @@ public class RegisteredLetter extends LetterDecorator {
 	@Override
 	public void action() {
 		this.content.action();
-		this.sender.getCity().sendLetter(new AcknowledgmentOfReceipt(this.receiver, this.sender));
+		Text text = new Text("Acknowledgment of receipt for " + this);
+		AcknowledgmentOfReceipt ackOfRec = new AcknowledgmentOfReceipt(this.receiver, this.sender, text);
+		this.receiver.sendLetter(ackOfRec);
 	}
 
 	/* (non-Javadoc)
@@ -44,4 +47,7 @@ public class RegisteredLetter extends LetterDecorator {
 		return this.content.getCost() + RegisteredLetter.OVERCOST;
 	}
 
+	public String toString() {
+		return "a registered letter whose content is " + this.content;
+	}
 }

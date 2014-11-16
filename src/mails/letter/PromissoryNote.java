@@ -31,9 +31,11 @@ public class PromissoryNote extends Letter<Money> {
 	 */
 	@Override
 	public void action() {
-		this.sender.getBankAccount().debit(this.content.getAmount());
-		this.receiver.getBankAccount().credit(this.content.getAmount());		
-		this.sender.getCity().sendLetter(new SimpleLetter(this.receiver, this.sender, new Text("Thanks !")));
+		this.sender.debit(this.content.getAmount());
+		this.receiver.credit(this.content.getAmount());
+		Text text = new Text("Thanks for " + this);
+		ThanksLetter thanks = new ThanksLetter(this.receiver, this.sender, text);
+		this.receiver.sendLetter(thanks);
 	}
 
 	/* (non-Javadoc)
@@ -42,6 +44,11 @@ public class PromissoryNote extends Letter<Money> {
 	@Override
 	public int getCost() {
 		return this.content.getAmount()/100 + SimpleLetter.SIMPLELETTERCOST;
+	}
+
+	@Override
+	public String toString() {
+		return "a promissory note letter whose content is " + this.content ;
 	}
 	
 }

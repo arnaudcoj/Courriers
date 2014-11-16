@@ -25,7 +25,7 @@ public class InhabitantTest {
 	@Test
 	public void testGetCity() {
 		City c = new City("Testville");
-		Inhabitant h = new Inhabitant(c, new BankAccount(12));
+		Inhabitant h = new Inhabitant(c, "Test", new BankAccount(12));
 		assertEquals(c, h.getCity());
 	}
 
@@ -35,20 +35,20 @@ public class InhabitantTest {
 	@Test
 	public void testGetBankAccount() {
 		BankAccount b = new BankAccount(12);
-		Inhabitant h = new Inhabitant(new City("testVille"), b);
+		Inhabitant h = new Inhabitant(new City("testVille"), "Test", b);
 		assertEquals(b, h.getBankAccount());
 	}
-
+	
 	/**
 	 * Test method for {@link mails.Inhabitant#receiveLetter(mails.Letter)}.
 	 */
 	@Test
 	public void testReceiveLetter() {
 		City c = new City("Testville");
-		Inhabitant h1 = new Inhabitant(c, new BankAccount(12));
-		Inhabitant h2 = new Inhabitant(c, new BankAccount(12));
+		Inhabitant h1 = new Inhabitant(c, "Test", new BankAccount(12));
+		Inhabitant h2 = new Inhabitant(c, "Test", new BankAccount(12));
 		PromissoryNote p = new PromissoryNote(h1, h2, new Money(12));
-		c.sendLetter(p);
+		h1.sendLetter(p);
 		c.distributeLetters();
 		assertEquals(-1, h1.getBankAccount().getBalance());
 		assertEquals(23, h2.getBankAccount().getBalance());

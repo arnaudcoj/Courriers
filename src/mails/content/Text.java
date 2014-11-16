@@ -40,6 +40,6 @@ public class Text implements Content {
 	 * @return a String defining the Text
 	 */
 	public String toString() {
-		return "text content (" + this.text + ")";
+		return "a text content (" + this.text + ")";
 	}
 }

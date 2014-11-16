@@ -31,7 +31,6 @@ public class SimpleLetter extends Letter<Text> {
 	 */
 	@Override
 	public void action() {
-		System.out.println("content : " + this.content.getText());
 	}
 
 	/* (non-Javadoc)
@@ -42,6 +41,8 @@ public class SimpleLetter extends Letter<Text> {
 		return SimpleLetter.SIMPLELETTERCOST;
 	}
 
-	
+	public String toString() {
+		return "a simple letter whose content is " + this.content;
+		}
 	
 }

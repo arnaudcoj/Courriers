@@ -25,8 +25,8 @@ public class CityTest {
 	@Test
 	public void testLetters() {
 		City c = new City("Testville");
-		Inhabitant h1 = new Inhabitant(c, new BankAccount(12));
-		Inhabitant h2 = new Inhabitant(c, new BankAccount(12));
+		Inhabitant h1 = new Inhabitant(c, "Test-01", new BankAccount(12));
+		Inhabitant h2 = new Inhabitant(c, "Test-02", new BankAccount(12));
 		PromissoryNote p = new PromissoryNote(h1, h2, new Money(12));
 		c.sendLetter(p);
 		c.distributeLetters();

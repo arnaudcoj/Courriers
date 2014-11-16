@@ -40,6 +40,6 @@ public class Money implements Content {
 	 * @return a String defining the Content
 	 */
 	public String toString() {
-		return "money content (" + this.amount + ")";
+		return "a money content (" + this.amount + ")";
 	}
 }

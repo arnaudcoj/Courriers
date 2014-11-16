@@ -53,4 +53,7 @@ public class BankAccount {
 		return balance;
 	}
 
+	public String toString() {
+		return "" + this.balance + " euros";
+	}
 }

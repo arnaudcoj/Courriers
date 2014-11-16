@@ -37,7 +37,7 @@ public class City {
 	 */
 	public void sendLetter(Letter<?> letter) {
 		this.postBox.add(letter);
-		letter.getSender().getBankAccount().debit(letter.getCost());
+		letter.getSender().debit(letter.getCost());
 	}
 
 	/**
@@ -54,5 +54,9 @@ public class City {
 			Letter<?> l = sac.pop();
 			l.getReceiver().receiveLetter(l);
 		}
+	}
+	
+	public String toString() {
+		return this.name + " city";
 	}
 }
