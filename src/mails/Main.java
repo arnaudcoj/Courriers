@@ -5,17 +5,17 @@
  */
 package mails;
 
-/**
- * Class defining the Main
- */
 public class Main {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		System.out.println("Creating Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch city");
+		System.out.println("Creating 100 inhabitants");
+		System.out.println("Mailing letters for 6 days");
+		System.out.println("**************************************************");
+		
 	}
 
 }
