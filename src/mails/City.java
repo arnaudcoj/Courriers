@@ -6,7 +6,6 @@
 package mails;
 
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Class defining the City
