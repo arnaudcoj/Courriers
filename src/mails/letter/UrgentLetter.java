@@ -23,7 +23,7 @@ public class UrgentLetter extends LetterDecorator{
 	 * @throws IllegalArgumentException if letter is an UrgentLetter
 	 */
 	public UrgentLetter(Inhabitant sender, Inhabitant receiver,
-			Letter<?> content, Letter<?> letter) throws IllegalArgumentException {
+			Letter<?> letter) throws IllegalArgumentException {
 		super(sender, receiver, letter);
 		if(letter instanceof UrgentLetter)
 			throw new IllegalArgumentException("letter is an UrgentLetter");

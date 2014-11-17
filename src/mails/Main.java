@@ -9,8 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import mails.content.Money;
 import mails.content.Text;
+import mails.letter.PromissoryNote;
+import mails.letter.RegisteredLetter;
 import mails.letter.SimpleLetter;
+import mails.letter.UrgentLetter;
 
 public class Main {
 
@@ -48,18 +52,20 @@ public class Main {
 		switch (r.nextInt(4)) {
 
 		case 1:
-			letter = new UrgentLetter(this.inhabitants.get(r.nextInt(100)),
-					this.inhabitants.get(r.nextInt(100)), new Text("bla bla"+1));
+			Letter<?> tmp1 = new SimpleLetter(this.inhabitants.get(r.nextInt(100)),
+					this.inhabitants.get(r.nextInt(100)), new Text("bla bla"));
+			letter = new UrgentLetter(tmp1.getSender(), tmp1.getReceiver(), tmp1);
 			break;
 
 		case 2:
-			letter = new SimpleLetter(this.inhabitants.get(r.nextInt(100)),
-					this.inhabitants.get(r.nextInt(100)), new Text("bla bla"+2));
+			Letter<?> tmp2 = new SimpleLetter(this.inhabitants.get(r.nextInt(100)),
+					this.inhabitants.get(r.nextInt(100)), new Text("bla bla"));
+			letter = new RegisteredLetter(tmp2.getSender(), tmp2.getReceiver(), tmp2);
 			break;
 
 		case 3:
-			letter = new SimpleLetter(this.inhabitants.get(r.nextInt(100)),
-					this.inhabitants.get(r.nextInt(100)), new Text("bla bla"+3));
+			letter = new PromissoryNote(this.inhabitants.get(r.nextInt(100)),
+					this.inhabitants.get(r.nextInt(100)), new Money(r.nextInt(10)+10));
 			break;
 			
 		default :

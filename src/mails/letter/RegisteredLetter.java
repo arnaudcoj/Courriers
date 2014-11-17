@@ -24,7 +24,7 @@ public class RegisteredLetter extends LetterDecorator {
 	 * @param letter
 	 */
 	public RegisteredLetter(Inhabitant sender, Inhabitant receiver,
-			Letter<?> content, Letter<?> letter) {
+			Letter<?> letter) {
 		super(sender, receiver, letter);
 	}
 
