@@ -59,6 +59,14 @@ public class City {
 		}
 	}
 	
+	/**
+	 * Return true if and only if the postBox is empty
+	 * @return true if and only if the postBox is empty
+	 */
+	public boolean isEmpty(){
+		return this.postBox.isEmpty();
+	}
+	
 	public String toString() {
 		return this.name + " city";
 	}
