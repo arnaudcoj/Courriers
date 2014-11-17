@@ -48,7 +48,7 @@ public class InhabitantTest {
 		Inhabitant h1 = new Inhabitant(c, "Test", new BankAccount(12));
 		Inhabitant h2 = new Inhabitant(c, "Test", new BankAccount(12));
 		PromissoryNote p = new PromissoryNote(h1, h2, new Money(12));
-		h1.sendLetter(p);
+		c.sendLetter(p);
 		c.distributeLetters();
 		assertEquals(-1, h1.getBankAccount().getBalance());
 		assertEquals(23, h2.getBankAccount().getBalance());

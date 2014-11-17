@@ -58,17 +58,6 @@ public class Inhabitant {
 		letter.action();
 	}
 
-	/**
-	 * Sends a letter
-	 * @param letter
-	 */
-	public void sendLetter(Letter<?> letter) {
-		System.out.println("-> " + this.name + " mails " + letter + " to "
-				+ letter.getReceiver() + " for a cost of " + letter.getCost()
-				+ " euros");
-		this.city.sendLetter(letter);
-	}
-
 	public void credit(int amount) {
 		this.bankAccount.credit(amount);
 		System.out.println("+ " + this.name + "'s account is credited with "

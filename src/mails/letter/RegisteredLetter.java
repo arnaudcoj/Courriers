@@ -36,7 +36,7 @@ public class RegisteredLetter extends LetterDecorator {
 		this.content.action();
 		Text text = new Text("Acknowledgment of receipt for " + this);
 		AcknowledgmentOfReceipt ackOfRec = new AcknowledgmentOfReceipt(this.receiver, this.sender, text);
-		this.receiver.sendLetter(ackOfRec);
+		this.receiver.getCity().sendLetter(ackOfRec);
 	}
 
 	/* (non-Javadoc)
