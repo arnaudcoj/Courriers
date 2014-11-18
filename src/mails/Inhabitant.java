@@ -53,21 +53,15 @@ public class Inhabitant {
 	 * @param letter
 	 */
 	public void receiveLetter(Letter<?> letter) {
-		System.out.println("<- " + this.name + " receives " + letter + " from "
-				+ letter.getSender());
 		letter.action();
 	}
 
 	public void credit(int amount) {
 		this.bankAccount.credit(amount);
-		System.out.println("+ " + this.name + "'s account is credited with "
-				+ amount + "; its balance is now " + this.bankAccount);
 	}
 
 	public void debit(int amount) {
 		this.bankAccount.debit(amount);
-		System.out.println("- " + this.name + "'s account is debited of "
-				+ amount + "; its balance is now " + this.bankAccount);
 	}
 
 	public String toString() {

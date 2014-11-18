@@ -36,9 +36,6 @@ public class City {
 	 *            the letter to add
 	 */
 	public void sendLetter(Letter<?> letter) {
-		System.out.println("-> " + letter.getSender() + " mails " + letter + " to "
-				+ letter.getReceiver() + " for a cost of " + letter.getCost()
-				+ " euros");
 		letter.getSender().debit(letter.getCost());
 		this.postBox.add(letter);
 	}

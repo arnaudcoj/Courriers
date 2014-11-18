@@ -21,21 +21,24 @@ public class Main {
 	protected City city;
 	protected List<Inhabitant> inhabitants;
 	protected Random r;
+	protected StringBuilder builder;
 
 	public Main() {
+		this.builder = new StringBuilder();
+		
 		r = new Random();
 
 		System.out
 				.println("Creating Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch city");
-		this.city = new City(
-				"Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch");
+		this.city = new RenderCity(
+				"Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch", this.builder);
 
 		this.inhabitants = new ArrayList<Inhabitant>();
 
 		System.out.println("Creating 100 inhabitants");
 		for (int i = 0; i < 100; i++)
-			this.inhabitants.add(new Inhabitant(city, "inhabitant-" + (i + 1),
-					new BankAccount(5000)));
+			this.inhabitants.add(new RenderInhabitant(city, "inhabitant-" + (i + 1),
+					new BankAccount(5000), this.builder));
 	}
 
 	protected Random getR() {
@@ -44,6 +47,10 @@ public class Main {
 
 	protected City getCity() {
 		return this.city;
+	}
+	
+	protected StringBuilder getBuilder(){
+		return this.builder;
 	}
 
 	protected Letter<?> createRandomLetter() {
@@ -96,6 +103,8 @@ public class Main {
 				main.getCity().sendLetter(main.createRandomLetter());
 
 			main.getCity().distributeLetters();
+			
+			main.getBuilder().render();
 		}
 
 		while (!main.getCity().isEmpty()) {
@@ -105,6 +114,8 @@ public class Main {
 
 			main.getCity().distributeLetters();
 
+			main.getBuilder().render();
+			
 			i++;
 		}
 	}
