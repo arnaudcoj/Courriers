@@ -34,4 +34,13 @@ public class StringBuilder {
 		System.out.print(this.buildingString);
 		this.buildingString = "";
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return this.buildingString;
+	}
 }

@@ -13,7 +13,9 @@ import org.junit.runners.Suite.SuiteClasses;
  * Class defining the AllTests
  */
 @RunWith(Suite.class)
-@SuiteClasses({ BankAccountTest.class, CityTest.class, InhabitantTest.class, MoneyTest.class, AcknowledgmentOfReceiptTest.class })
+@SuiteClasses({ AcknowledgmentOfReceiptTest.class, BankAccountTest.class,
+		CityTest.class, InhabitantTest.class, MoneyTest.class,
+		RenderCityTest.class, StringBuilderTest.class })
 public class AllTests {
 
 }
