@@ -1,3 +1,6 @@
 Pierre Graux
 Arnaud Cojez
 TP Courriers
+
+Pour executer : 
+	java -jar courriers.jar 
