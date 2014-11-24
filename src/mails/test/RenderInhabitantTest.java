@@ -3,10 +3,13 @@
  * @author Pierre Graux
  * @author Arnaud Cojez
  */
-package mails;
+package mails.test;
 
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.assertEquals;
+import mails.BankAccount;
+import mails.City;
+import mails.RenderInhabitant;
+import mails.StringBuilder;
 import mails.content.Text;
 import mails.letter.SimpleLetter;
 
