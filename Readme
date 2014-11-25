@@ -4,3 +4,5 @@ TP Courriers
 
 Pour executer : 
 	java -jar courriers.jar 
+	
+Pour un peu d'originalité, nous avons implanté un String Builder que nous utilisons pour l'affichage de la trace d'éxecution. 
